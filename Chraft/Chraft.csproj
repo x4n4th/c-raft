@@ -60,6 +60,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Nini">
       <HintPath>.\Nini.dll</HintPath>
     </Reference>
@@ -186,6 +190,7 @@
     <Compile Include="Net\Client.Recv.cs" />
     <Compile Include="Net\Client.Send.cs" />
     <Compile Include="Net\Cryptography\PacketCryptography.cs" />
+    <Compile Include="Net\JsonMessage.cs" />
     <Compile Include="Net\PacketReader.cs" />
     <Compile Include="Net\Packets\MapChunkBulkPacket.cs" />
     <Compile Include="Net\Packets\MapChunkData.cs" />
@@ -196,6 +201,11 @@
     <Compile Include="Persistence\ClientSurrogate.cs" />
     <Compile Include="Plugins\Events\BlockEvent.cs" />
     <Compile Include="Plugins\PluginLogger.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utils\BanSystem.cs" />
     <Compile Include="Utils\PlayerNBTConverter.cs" />
     <Compile Include="WorldGen\ChunkProvider.cs" />
@@ -423,6 +433,15 @@
       <Project>{CCE78B48-1352-4746-A14E-DCB18BB5CCA2}</Project>
       <Name>Chraft.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -406,9 +406,16 @@ namespace Chraft.Net
         /// <param name="message">The message to be displayed in the chat HUD.</param>
         public void SendMessage(string message)
         {
+            JsonMessage jsonMessage = new JsonMessage(message);
+            jsonMessage.setColor("white");
+
+            message = jsonMessage.serialize();
+
+            Logger.Log(LogLevel.Debug, message);
+
             SendPacket(new ChatMessagePacket
             {
-                Message = "{\"text\":\"" + message + "\"}"
+                Message = message
             });
         }
 
