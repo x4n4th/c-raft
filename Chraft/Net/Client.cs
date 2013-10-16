@@ -408,7 +408,7 @@ namespace Chraft.Net
         {
             SendPacket(new ChatMessagePacket
             {
-                Message = message
+                Message = "{\"text\":\"" + message + "\"}"
             });
         }
 
